@@ -1,10 +1,14 @@
-{
+{ 
   "name": "Entry_HW",
+  "version": "1.6.14",
   "scripts": {
     "clean": "rimraf dist",
     "pack": "build",
     "dist": "build --arch ia32",
-    "start": "set NODE_ENV=development&&electron -d app"
+    "start": "set NODE_ENV=development&&electron -d app",
+    "make": "build",
+    "make:osx": "build",
+    "make:win": "build --arch ia32 --platform=win32 && makensis ./build/entry-hw.nsi"
   },
   "build": {
     "dmg": {
@@ -44,9 +48,9 @@
     "iconUrl": "https://raw.githubusercontent.com/entrylabs/entry-hw/feature/electron/build/icon.ico"
   },
   "devDependencies": {
+    "electron": "1.6.11",
     "electron-builder": "10.5.0",
     "electron-packager": "^8.1.0",
-    "electron-prebuilt": "1.4.5",
     "rimraf": "^2.5.4"
   },
   "dependencies": {}
